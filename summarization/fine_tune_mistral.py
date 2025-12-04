@@ -189,7 +189,7 @@ def main():
         )
 
     # Load model
-    hf_token = ""
+    hf_token = os.getenv("HF_TOKEN")
     model_name = args.model_name_or_path
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
