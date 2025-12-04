@@ -196,10 +196,10 @@ def main():
         load_in_8bit=True,
         # For manual run with CUDA_VISIBLE_DEVICES use "cuda:0" as device_map
         device_map="auto",  # can be specific with device, but if CUDA_VISIBLE_DEVICES is set, auto should work
-        token=hf_token,
+        use_auth_token=hf_token,
     )
     tokenizer = AutoTokenizer.from_pretrained(
-        model_name, token=hf_token
+        model_name, use_auth_token=hf_token
     )  # Padding size for batched prediction from HF warning
     # Workaround for missing padding token
     # From https://github.com/huggingface/transformers/issues/22312 (comment Jun 28)
