@@ -7,11 +7,10 @@ from pathlib import Path
 
 import torch
 import transformers
-from transformers import AutoModelForCausalLM, AutoTokenizer
+from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from datasets import load_dataset
 from peft import get_peft_model, prepare_model_for_kbit_training, LoraConfig
 from trl import SFTTrainer, DataCollatorForCompletionOnlyLM
-from peft import PeftModel
 import evaluate
 from rouge_score import rouge_scorer
 import wandb
@@ -192,13 +191,22 @@ def main():
     # Load model
     hf_token = args.hf_token or os.getenv("HF_TOKEN")
     model_name = args.model_name_or_path
+
+    # 4-bit quantization config
+    bnb_config = BitsAndBytesConfig(
+        load_in_4bit=True,
+        bnb_4bit_use_double_quant=True,
+        bnb_4bit_quant_type="nf4",
+        bnb_4bit_compute_dtype=torch.bfloat16,
+    )
+
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
-        load_in_8bit=True,
-        # For manual run with CUDA_VISIBLE_DEVICES use "cuda:0" as device_map
-        device_map="auto",  # can be specific with device, but if CUDA_VISIBLE_DEVICES is set, auto should work
+        quantization_config=bnb_config,   # NEW
+        device_map="auto",
         use_auth_token=hf_token,
     )
+
     tokenizer = AutoTokenizer.from_pretrained(
         model_name, use_auth_token=hf_token
     )  # Padding size for batched prediction from HF warning
@@ -352,8 +360,6 @@ def main():
 
     else:
         # Training
-        # Loading in 8 bit ..."
-        model = prepare_model_for_kbit_training(model)
         model = get_peft_model(model, lora_config)
 
         # Training setup
@@ -371,7 +377,7 @@ def main():
             logging_steps=args.save_and_logging_steps,  # eval_steps defaults to this
             load_best_model_at_end=True,
             # metric_for_best_model defaults to loss, rouge not possible since no decoding in compute_metrics
-            optim="paged_adamw_32bit",
+            optim="adamw_torch",
             # no clear evidence for lr scheduler:
             # * original llama and some sources use cosine (however llama with minimum of 0.1)
             # * often when paged_adamw is used, constant is used (strongest evidence: https://www.philschmid.de/instruction-tune-llama-2)
