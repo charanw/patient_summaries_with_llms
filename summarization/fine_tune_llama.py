@@ -47,6 +47,7 @@ def parse_args():
         default=None,
         help="Path to custom test JSON/JSONL file",
     )
+    parser.add_argument("--hf_token", type=str, default=None, help="Hugging Face token")
 
     # General parameters
     parser.add_argument("--num_train_examples", type=int, default=None)
@@ -189,7 +190,7 @@ def main():
         )
 
     # Load model
-    hf_token = os.getenv("HF_TOKEN")
+    hf_token = args.hf_token or os.getenv("HF_TOKEN")
     model_name = args.model_name_or_path
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
