@@ -205,6 +205,8 @@ def main():
         model_name,
         quantization_config=bnb_config,
         use_auth_token=hf_token,
+        device_map=None,
+        low_cpu_mem_usage=False,
     )
 
     tokenizer = AutoTokenizer.from_pretrained(
