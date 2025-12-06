@@ -9,7 +9,8 @@ import torch
 import transformers
 from transformers import AutoModelForCausalLM, AutoTokenizer, BitsAndBytesConfig
 from datasets import load_dataset
-from peft import get_peft_model, prepare_model_for_kbit_training, LoraConfig
+from peft import PeftModel
+from peft import get_peft_model, LoraConfig
 from trl import SFTTrainer, DataCollatorForCompletionOnlyLM
 import evaluate
 from rouge_score import rouge_scorer
@@ -202,8 +203,7 @@ def main():
 
     model = AutoModelForCausalLM.from_pretrained(
         model_name,
-        quantization_config=bnb_config,   # NEW
-        device_map="auto",
+        quantization_config=bnb_config,
         use_auth_token=hf_token,
     )
 
@@ -327,7 +327,7 @@ def main():
         for ex in dataset:
             input_prompt = generate_prompt(ex["text"])
             input_tokens = tokenizer(input_prompt, return_tensors="pt")["input_ids"].to(
-                device
+                "cuda"
             )
 
             with torch.cuda.amp.autocast():
@@ -356,7 +356,7 @@ def main():
         print(f"Loading model for evaluation: {args.evaluation_model_path}")
         trained_model = PeftModel.from_pretrained(
             model, args.evaluation_model_path, torch_dtype=torch.float16
-        ).to(device)
+        )
 
     else:
         # Training
@@ -428,7 +428,7 @@ def main():
         # We will also pre-process the model by upcasting the layer norms in float 32 for more stable training
         for name, module in trainer.model.named_modules():
             if "norm" in name:
-                module = module.to(torch.float32)
+                module.float()
 
         trainer.train()
         trainer.save_model(f"{output_dir}/best_val_loss")
