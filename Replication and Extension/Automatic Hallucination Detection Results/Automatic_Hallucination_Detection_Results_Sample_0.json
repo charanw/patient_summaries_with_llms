@@ -1,0 +1,50 @@
+[
+    {
+        "Error Type": "Unsupported Medication",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Ceftriaxone was continued initially given bandemia",
+            "AVS Span": "You were given antibiotics initially as a precaution"
+        }
+    },
+    {
+        "Error Type": "Unsupported Procedure",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "EGD showed possible varices at the GE junction",
+            "AVS Span": "An endoscopy was performed"
+        }
+    },
+    {
+        "Error Type": "Unsupported Time",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Furosemide and lasix were held given ? GI bleed and concern for possible infection",
+            "AVS Span": "During your stay, your white blood cell count showed a high percentage of bands"
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Patient was continued on ceftriaxone given ongoing concern for infection with bandemia",
+            "AVS Span": "Your liver function tests (LFTs) were also elevated, but they trended down throughout your stay."
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Transaminitis: Patient with known history of hep C with most recent viral load of 17,000 ___",
+            "AVS Span": "The cause of your LFT elevation is not entirely clear and will need to be followed as an outpatient"
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "You were discharged home with close follow-up.",
+            "AVS Span": "Follow-up pending blood cultures"
+        }
+    }
+]

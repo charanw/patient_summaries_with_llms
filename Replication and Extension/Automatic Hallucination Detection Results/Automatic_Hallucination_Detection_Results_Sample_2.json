@@ -1,0 +1,50 @@
+[
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "His H/H remained stable and he was admitted for EGD to evaluate for source of bleeding.",
+            "AVS Span": "Your blood pressure and heart rate remained stable throughout your stay."
+        }
+    },
+    {
+        "Error Type": "Unsupported Medication",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "He was treated with BID PPI.",
+            "AVS Span": "You were treated with a medication called omeprazole to help heal the ulcerated area."
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "He will need further work-up as an outpatient including PET scan, EUS and swallow study.",
+            "AVS Span": "We will need to do further tests, including a PET scan, endoscopic ultrasound (EUS), and swallow study."
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Patient instructed to avoid NSAIDs in the setting of recent UGIB.",
+            "AVS Span": "You also reported recent onset back pain, which was treated with Tylenol #3 and later with acetaminophen. The back pain was thought to be musculoskeletal in nature."
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Follow up EGD biopsy results, pending at discharge",
+            "AVS Span": "A biopsy was taken from the mass, and the results are still pending."
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "After pt was d/c'd final read of CT revealed pulmonary nodules and question of lung infection.",
+            "AVS Span": "The final read of your CT scan revealed pulmonary nodules, and we recommend a follow-up CT chest in 3 months to assess for any changes."
+        }
+    }
+]

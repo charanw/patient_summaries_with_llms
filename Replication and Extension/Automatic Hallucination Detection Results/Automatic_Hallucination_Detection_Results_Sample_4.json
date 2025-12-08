@@ -1,0 +1,42 @@
+[
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Attemtped to send stool studies and Cdiff for diarrhea ___ light of recent hospitalization and antibiotic use), but patient was unable to provide stool sample while hospitalized, which suggested her diarrhea had resolved and unlikely to be secondary to severe infection.",
+            "AVS Span": "However, if your diarrhea persists after discharge, further tests may be needed."
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Her PCP is aware and has been following closely.",
+            "AVS Span": "It is possible that the elevated white blood cell count is due to a history of urinary tract infections and recurrent lung infections."
+        }
+    },
+    {
+        "Error Type": "Unsupported Medication",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Patient was continued on ACEi, spironolactone. No beta blocker given her underlying lung disease.",
+            "AVS Span": "You are currently on a low-sodium diet and medications such as an ACE inhibitor and spironolactone."
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Patient with increased oxygen requirement on day of admission, likely ___ having missed chest ___ over past few days.",
+            "AVS Span": "You also experienced shortness of breath, which was likely due to missing your regular chest physical therapy over the past few days."
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Could not get stool sample to test for Cdiff or other stool infection b/c unable to provide stool sample while hospitalized.",
+            "AVS Span": "The doctors could not find an infection on your chest X-ray, and your urine and stool cultures were negative."
+        }
+    }
+]

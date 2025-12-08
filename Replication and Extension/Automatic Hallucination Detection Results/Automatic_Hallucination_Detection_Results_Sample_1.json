@@ -1,0 +1,50 @@
+[
+    {
+        "Error Type": "Unsupported Medication",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Home Xarelto/ASA held for ___ post-procedure with stable Hgb, followed by resumption of ASA and therapeutic anticoagulation with hep gtt for >24h",
+            "AVS Span": "You were on Xarelto and ASA for blood thinning, but these were held for a few days after the procedure, and then you were resumed on ASA and therapeutic anticoagulation with heparin."
+        }
+    },
+    {
+        "Error Type": "Unsupported Time",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Home Xarelto was resumed on the evening of discharge.",
+            "AVS Span": "You were on Xarelto and ASA for blood thinning, but these were held for a few days after the procedure, and then you were resumed on ASA and therapeutic anticoagulation with heparin."
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Patient will also ___ with ERCP team for repeat EGD in 6 months.",
+            "AVS Span": "You will need to schedule follow-up appointments with your PCP and GI/ERCP team for a follow-up EGD in 6 months."
+        }
+    },
+    {
+        "Error Type": "Unsupported Medication",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Home amiodarone and metoprolol continued on d/c.",
+            "AVS Span": "You were also on amiodarone and metoprolol for your atrial fibrillation, which is now in normal rhythm."
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Transaminitis: ALT mildly elevated in 40-50 range; etiology unclear, amiodarone use. Stable, and further w/u deferred to PCP.",
+            "AVS Span": "You had a history of coronary artery disease, heart failure with preserved ejection fraction, high blood pressure, and a gastric neuroendocrine tumor."
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Hgb 7.9 on discharge.",
+            "AVS Span": "Your blood count (Hgb) dropped to 6.8, but it has since stabilized and is now at 7.9."
+        }
+    }
+]

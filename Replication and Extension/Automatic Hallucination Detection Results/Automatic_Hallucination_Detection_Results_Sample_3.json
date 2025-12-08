@@ -1,0 +1,50 @@
+[
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Sodium did correct after IVH. On admission 122; improved after receiving 1L NS to Na 139.",
+            "AVS Span": "Your sodium levels improved with intravenous fluids."
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Patient orthostatic on hospital day 2, so likely hypovolemia hyponatremia secondary to low solute from alcohol abuse.",
+            "AVS Span": "The cause of your hyponatremia was initially unclear, but it was likely due to low solute from alcohol abuse and dehydration."
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Patient has h/o ETOH abuse but no h/o seizures from withdrawal in past (although she is a poor historian).",
+            "AVS Span": "You have a history of alcohol abuse, but you have not had seizures from withdrawal in the past."
+        }
+    },
+    {
+        "Error Type": "Unsupported Medication",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Thiamine, folate, MVI PO given daily.",
+            "AVS Span": "During your hospital stay, you were monitored for alcohol withdrawal symptoms and received thiamine, folate, and multivitamins."
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "Sodium monitored and were stable.",
+            "AVS Span": "Your sodium levels improved with intravenous fluids, and you did not have any further episodes of low blood pressure or orthostatic symptoms."
+        }
+    },
+    {
+        "Error Type": "Unsupported Fact",
+        "Count": 1,
+        "Example": {
+            "BHC Span": "No seizure activity in house.",
+            "AVS Span": "You underwent a CT scan of your head, which was normal."
+        }
+    }
+]
